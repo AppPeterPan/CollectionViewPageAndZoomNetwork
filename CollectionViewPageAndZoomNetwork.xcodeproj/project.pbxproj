@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,10 +14,12 @@
 		9B09D83022F7129E003F09A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B09D82E22F7129E003F09A1 /* LaunchScreen.storyboard */; };
 		9B09D83822F71957003F09A1 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09D83722F71957003F09A1 /* PhotoCollectionViewController.swift */; };
 		9B09D83A22F719A9003F09A1 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09D83922F719A9003F09A1 /* PhotoCell.swift */; };
+		A6ECB4EA2582204600770318 /* StoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ECB4E92582204600770318 /* StoreItem.swift */; };
+		A6ECB4F22582245200770318 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A6ECB4F12582245200770318 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9B09D82022F7129B003F09A1 /* CollectionViewPageAndZoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewPageAndZoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B09D82022F7129B003F09A1 /* CollectionViewPageAndZoomNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewPageAndZoomNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B09D82322F7129B003F09A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B09D82522F7129B003F09A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9B09D82A22F7129B003F09A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -26,6 +28,7 @@
 		9B09D83122F7129E003F09A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B09D83722F71957003F09A1 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
 		9B09D83922F719A9003F09A1 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		A6ECB4E92582204600770318 /* StoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6ECB4F22582245200770318 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,7 +54,7 @@
 		9B09D82122F7129B003F09A1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9B09D82022F7129B003F09A1 /* CollectionViewPageAndZoom.app */,
+				9B09D82022F7129B003F09A1 /* CollectionViewPageAndZoomNetwork.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,6 +65,7 @@
 				9B09D82322F7129B003F09A1 /* AppDelegate.swift */,
 				9B09D82522F7129B003F09A1 /* SceneDelegate.swift */,
 				9B09D83722F71957003F09A1 /* PhotoCollectionViewController.swift */,
+				A6ECB4E92582204600770318 /* StoreItem.swift */,
 				9B09D83922F719A9003F09A1 /* PhotoCell.swift */,
 				9B09D82922F7129B003F09A1 /* Main.storyboard */,
 				9B09D82C22F7129E003F09A1 /* Assets.xcassets */,
@@ -73,9 +78,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9B09D81F22F7129B003F09A1 /* CollectionViewPageAndZoom */ = {
+		9B09D81F22F7129B003F09A1 /* CollectionViewPageAndZoomNetwork */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9B09D83422F7129E003F09A1 /* Build configuration list for PBXNativeTarget "CollectionViewPageAndZoom" */;
+			buildConfigurationList = 9B09D83422F7129E003F09A1 /* Build configuration list for PBXNativeTarget "CollectionViewPageAndZoomNetwork" */;
 			buildPhases = (
 				9B09D81C22F7129B003F09A1 /* Sources */,
 				9B09D81D22F7129B003F09A1 /* Frameworks */,
@@ -85,9 +90,12 @@
 			);
 			dependencies = (
 			);
-			name = CollectionViewPageAndZoom;
+			name = CollectionViewPageAndZoomNetwork;
+			packageProductDependencies = (
+				A6ECB4F12582245200770318 /* Kingfisher */,
+			);
 			productName = Demo;
-			productReference = 9B09D82022F7129B003F09A1 /* CollectionViewPageAndZoom.app */;
+			productReference = 9B09D82022F7129B003F09A1 /* CollectionViewPageAndZoomNetwork.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -105,7 +113,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9B09D81B22F7129B003F09A1 /* Build configuration list for PBXProject "CollectionViewPageAndZoom" */;
+			buildConfigurationList = 9B09D81B22F7129B003F09A1 /* Build configuration list for PBXProject "CollectionViewPageAndZoomNetwork" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -114,11 +122,14 @@
 				Base,
 			);
 			mainGroup = 9B09D81722F7129B003F09A1;
+			packageReferences = (
+				A6ECB4F02582245200770318 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 9B09D82122F7129B003F09A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9B09D81F22F7129B003F09A1 /* CollectionViewPageAndZoom */,
+				9B09D81F22F7129B003F09A1 /* CollectionViewPageAndZoomNetwork */,
 			);
 		};
 /* End PBXProject section */
@@ -142,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B09D82422F7129B003F09A1 /* AppDelegate.swift in Sources */,
+				A6ECB4EA2582204600770318 /* StoreItem.swift in Sources */,
 				9B09D82622F7129B003F09A1 /* SceneDelegate.swift in Sources */,
 				9B09D83822F71957003F09A1 /* PhotoCollectionViewController.swift in Sources */,
 				9B09D83A22F719A9003F09A1 /* PhotoCell.swift in Sources */,
@@ -321,7 +333,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9B09D81B22F7129B003F09A1 /* Build configuration list for PBXProject "CollectionViewPageAndZoom" */ = {
+		9B09D81B22F7129B003F09A1 /* Build configuration list for PBXProject "CollectionViewPageAndZoomNetwork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B09D83222F7129E003F09A1 /* Debug */,
@@ -330,7 +342,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9B09D83422F7129E003F09A1 /* Build configuration list for PBXNativeTarget "CollectionViewPageAndZoom" */ = {
+		9B09D83422F7129E003F09A1 /* Build configuration list for PBXNativeTarget "CollectionViewPageAndZoomNetwork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B09D83522F7129E003F09A1 /* Debug */,
@@ -340,6 +352,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A6ECB4F02582245200770318 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.15.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A6ECB4F12582245200770318 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A6ECB4F02582245200770318 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9B09D81822F7129B003F09A1 /* Project object */;
 }

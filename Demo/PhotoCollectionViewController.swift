@@ -7,9 +7,27 @@
 //
 
 import UIKit
-
+import Kingfisher
 
 class PhotoCollectionViewController: UICollectionViewController {
+    
+    var items = [StoreItem]()
+    
+    func fetchItems(completion: @escaping (Result<[StoreItem], Error>) -> Void) {
+        let url = URL(string: "https://itunes.apple.com/search?term=spider&media=movie")!
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let data = data {
+                do {
+                    let searchResponse = try JSONDecoder().decode(SearchResponse.self, from: data)
+                    completion(.success(searchResponse.results))
+                } catch  {
+                    completion(.failure(error))
+                }
+            } else if let error = error {
+                completion(.failure(error))
+            }
+        }.resume()
+    }
     
     func setupFlowLayout() {
         let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout
@@ -24,6 +42,17 @@ class PhotoCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
     
         setupFlowLayout()
+        fetchItems { (result) in
+            switch result {
+            case .success(let items):
+                self.items = items
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            case .failure(_):
+                break
+            }
+        }
     }
     
     /*
@@ -38,15 +67,15 @@ class PhotoCollectionViewController: UICollectionViewController {
     
     // MARK: UICollectionViewDataSource
     
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
+//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 1
+//    }
+//    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 5
+        return items.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -58,7 +87,16 @@ class PhotoCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(PhotoCell.self)", for: indexPath) as! PhotoCell
         
         // Configure the cell
-        cell.imageView.image = UIImage(named: "pic\(indexPath.item)")
+        let item = items[indexPath.item]
+        cell.imageView.image = nil        
+        cell.imageView.kf.setImage(with: item.artworkUrlForSize(1000), completionHandler:  { (result) in
+            switch result {
+            case .success(_):
+                cell.updateZoom()
+            case .failure(_):
+                break
+            }
+        })
         
         return cell
     }
